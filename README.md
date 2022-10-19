@@ -1,2 +1,1 @@
-# 480p
-Believe in quality 
+# 720p

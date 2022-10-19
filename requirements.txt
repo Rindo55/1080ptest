@@ -1,0 +1,14 @@
+pyrogram==1.4.16
+TgCrypto
+aiohttp
+python-dotenv
+ffmpeg
+feedparser
+libtorrent
+pillow
+requests
+bs4
+uvloop
+motor
+dnspython
+opencv-python-headless
