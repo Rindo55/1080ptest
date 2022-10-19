@@ -12,7 +12,7 @@ import subprocess
 
 async def gg():
 
-  cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animext':fontsize=18:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" libx264 -preset veryfast -pix_fmt yuv420p10le -r 24000/1001 -tune animation -crf 24 -c:a copy "out.mkv" -y''',
+  cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animext':fontsize=18:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" -c:v h264 -preset veryfast -pix_fmt yuv420p10le -r 24000/1001 -tune animation -crf 24 -c:a copy "out.mkv" -y''',
 
   subprocess.Popen(cmd,shell=True)
 
