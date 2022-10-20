@@ -104,11 +104,11 @@ async def start_uploading(data):
 
         name, ext = title.split(".")
 
-        name += f"@animxt." + ext
+        name += f" @animxt." + ext
 
         fpath = "downloads/" + name
 
-        name = name.replace(f"@animxt.","").replace(ext,"").strip()
+        name = name.replace(f" @animxt.","").replace(ext,"").strip()
 
         id, img, tit = await get_anime_img(get_anime_name(title))
 
