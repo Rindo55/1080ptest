@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-API_ID = "8858279"
+API_ID = "10247139"
 
 API_HASH = "96b46175824223a33737657ab943fd6a"
 
-BOT_TOKEN = "ef28c3f458143cbcb4271a98a2e9d596"
+BOT_TOKEN = "5671429781:AAExmhyoDjgr_7oWDGUfEZoB2qLzKqk65KM"
 
 MONGO_DB_URI = "mongodb+srv://480p:1234@cluster0.3h5wx8u.mongodb.net/?retryWrites=true&w=majority"
 
