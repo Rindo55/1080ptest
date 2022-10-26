@@ -10,7 +10,7 @@ API_HASH = "96b46175824223a33737657ab943fd6a"
 
 BOT_TOKEN = "5671429781:AAExmhyoDjgr_7oWDGUfEZoB2qLzKqk65KM"
 
-MONGO_DB_URI = "mongodb+srv://480p:user@cluster0.rmc0j0i.mongodb.net/?retryWrites=true&w=majority"
+MONGO_DB_URI = "mongodb+srv://480p:1234@cluster0.3h5wx8u.mongodb.net/?retryWrites=true&w=majority"
 
 INDEX_ID = -1001159872623
 
