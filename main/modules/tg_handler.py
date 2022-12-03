@@ -112,7 +112,7 @@ async def start_uploading(data):
 
         id, img, tit = await get_anime_img(get_anime_name(title))
         go_message_id = 5
-        msg = await app.send_photo(UPLOADS_ID,go_message_id,photo=img,caption=title)
+        msg = await app.edit_photo(UPLOADS_ID,go_message_id,photo=img,caption=title)
 
         print("Downloading --> ",name)
 
