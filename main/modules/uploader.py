@@ -61,25 +61,26 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
                 ]
 
             ])
-
+            filed = os.path.basename(file)
+            filed = filed.replace("(480p)", "[480p x265]")
             caption = f"**{name}** **(Eng Sub)**"
-            caption = caption.replace("480p", "480p x264 10Bit")
+            caption = caption.replace("480p", "480p x265 10Bit")
             x = await app.send_document(
 
                 UPLOADS_ID,
 
             document=file,
 
-            caption=caption + "\n" + "(" + tit + ")",
+            caption=caption + "\n" + "(" + tit + ")" + "\n" + "#HEVC",
 
-            file_name=os.path.basename(file),
+            file_name=filed,
 
             force_document=True,
 
             thumb=thumbnail,
 
             progress=progress_for_pyrogram,
-
+ 
             progress_args=(
 
                 os.path.basename(file),
