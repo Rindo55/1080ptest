@@ -109,11 +109,13 @@ Speed: {}
 ETA: {}
     """
 
-    text2 = """Name: {}
+    text2 = """**{}**
+━━━━━━━━━━━━━━━━━━━━━
+`Encoding to 480p HEVC 10Bit
 {}: {}%
 {}
 Speed: {}
-ETA: {}
+ETA: {}`
     """
 
     if enco == False:
@@ -207,8 +209,8 @@ ETA: {}
 
         percent = round((completed/total)*100)
 
-        fill = " ▰ "
-        blank = " ▱ "
+        fill = "🟩"
+        blank = "🟥"
         bar = ""
 
         bar += round(percent/10)*fill
