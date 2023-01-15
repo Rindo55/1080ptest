@@ -2,6 +2,8 @@ import asyncio
 
 from main.modules.utils import get_progress_text
 
+from main.modules.tg_handler import videox_id
+
 import os
 
 import re
@@ -89,7 +91,7 @@ async def compress_video(total_time, message, name):
 
         try:
 
-          await message.edit(progress_str)
+          await app.edit_caption(videox_id, progress_str)
 
         except:
 
