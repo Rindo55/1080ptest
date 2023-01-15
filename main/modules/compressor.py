@@ -89,7 +89,7 @@ async def compress_video(total_time, videox, name):
 
         try:
 
-          await videox.edit_caption(progress_str)
+          await videox.edit_caption(caption + "\n" + progress_str)
 
         except:
 
