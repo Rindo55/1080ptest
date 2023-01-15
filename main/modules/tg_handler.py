@@ -127,10 +127,13 @@ async def start_uploading(data):
 
         duration = get_duration(file)
         filed = os.path.basename(file)
+        filed = filed.replace("SubsPlease", "")
+        filed = filed.replace("(480p), [480p Web-DL]")
+        kayo_id =
        
         videox = await app.send_document(
 
-                UPLOADS_ID,
+                kayo_id,
 
             document=file,
             
@@ -148,7 +151,7 @@ async def start_uploading(data):
 
         compressed = await compress_video(duration,videox,name)
 
-        
+        dingdong = await videox.edit_caption(name)
 
         if compressed == "None" or compressed == None:
 
