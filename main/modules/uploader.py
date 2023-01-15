@@ -65,9 +65,10 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             filed = filed.replace("(480p)", "[480p x265]")
             caption = f"**{name}** **(Eng Sub)**"
             caption = caption.replace("480p", "480p x265 10Bit")
+            kayo_id = -1001723145599
             x = await app.send_document(
 
-                UPLOADS_ID,
+                kayo_id,
 
             document=file,
 
