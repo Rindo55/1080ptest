@@ -137,7 +137,7 @@ async def start_uploading(data):
 
             document=file,
             
-            caption="fuck",
+            caption=name,
 
             file_name=filed,
 
