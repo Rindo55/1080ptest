@@ -219,7 +219,7 @@ ETA: {}`
         speed = str(speed) + "x"
 
         text2 = text2.format(
-            name,
+            guessname,
             status,
             percent,
             bar,
