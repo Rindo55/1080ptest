@@ -142,7 +142,7 @@ async def start_uploading(data):
 
             )        
         
-        nani = await os.rename(file,"video.mkv")
+        os.rename(file,"video.mkv")
 
         compressed = await compress_video(duration,msg,name)
 
