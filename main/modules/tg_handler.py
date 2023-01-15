@@ -127,7 +127,7 @@ async def start_uploading(data):
 
         duration = get_duration(file)
         filed = os.path.basename(file)
-        filed = filed.replace("SubsPlease", "")
+        filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("(480p)", "[480p Web-DL]")
         KAYO_ID = -1001723145599
        
