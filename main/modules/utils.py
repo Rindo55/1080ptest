@@ -112,7 +112,7 @@ ETA: {}
     text2 = """**{}**
 ━━━━━━━━━━━━━━━━━━━━━
 `Encoding to 480p HEVC 10Bit
-{}: {}%
+Percentage: {}%
 Speed: {}
 ETA: {}`
     """
@@ -221,7 +221,6 @@ ETA: {}`
         guessname = ghostname + "\n" + "#WebDL"
         text2 = text2.format(
             guessname,
-            status,
             percent,
             str(speed),
             ETA
