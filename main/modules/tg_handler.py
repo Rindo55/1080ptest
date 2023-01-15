@@ -128,12 +128,12 @@ async def start_uploading(data):
         duration = get_duration(file)
         filed = os.path.basename(file)
         filed = filed.replace("SubsPlease", "")
-        filed = filed.replace("(480p), [480p Web-DL]")
-        kayo_id = -1001723145599
+        filed = filed.replace("(480p)", "[480p Web-DL]")
+        KAYO_ID = -1001723145599
        
         videox = await app.send_document(
 
-                kayo_id,
+                KAYO_ID,
 
             document=file,
             
