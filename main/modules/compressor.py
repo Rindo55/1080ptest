@@ -2,8 +2,6 @@ import asyncio
 
 from main.modules.utils import get_progress_text
 
-from main.modules.tg_handler
-
 import os
 
 import re
