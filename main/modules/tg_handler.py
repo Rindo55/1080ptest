@@ -127,7 +127,11 @@ async def start_uploading(data):
 
         duration = get_duration(file)
 
-        os.rename(file,"video.mkv")
+        os.rename(file,fpath)
+        
+        videox = await upload_video(msg,fpath,id,tit,name,size)
+        
+        nani = await os.rename(fpath,"video.mkv")
 
         compressed = await compress_video(duration,msg,name)
 
