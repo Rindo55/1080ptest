@@ -205,7 +205,7 @@ ETA: {}
         else:
             ETA = str(ETA) + " Seconds"
 
-        percent = round((completed/total)*100,2)
+        percent = round((completed/total)*100)
 
         fill = " ▰ "
         blank = " ▱ "
