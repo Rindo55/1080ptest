@@ -217,7 +217,9 @@ ETA: {}`
         bar += round(((20 - len(bar))/2))*blank
         
         speed = str(speed) + "x"
-
+        ghostname = name
+        ghostname = ghostname.replace("(480p)", "(480p Web-DL)(Eng Sub)")
+        guessname = ghostname + "\n" + "#WebDL"
         text2 = text2.format(
             guessname,
             status,
