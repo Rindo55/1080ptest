@@ -134,13 +134,13 @@ async def start_uploading(data):
 
             document=file,
 
-            caption="fuck",
-
             file_name=filed,
 
             force_document=True
 
             )        
+        videox_id = videox.message_id
+        videox_id = int(videox_id)
         
         os.rename(file,"video.mkv")
 
