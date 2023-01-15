@@ -8,7 +8,7 @@ from main.modules.utils import episode_linker, get_duration, get_epnum, status_t
 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
-from main.modules.uploader import upload_video, upload_videoer
+from main.modules.uploader import upload_video
 
 import os
 
@@ -126,12 +126,23 @@ async def start_uploading(data):
         await status.edit(await status_text(f"Encoding {name}"),reply_markup=button1)
 
         duration = get_duration(file)
+        filed = os.path.basename(file)
+       
+        videox = await app.send_document(
 
-        os.rename(file,fpath)
+                UPLOADS_ID,
+
+            document=file,
+
+            caption="fuck",
+
+            file_name=filed,
+
+            force_document=True
+
+            )        
         
-        videox = await upload_videoer(msg,fpath,id,tit,name,size)
-        
-        nani = await os.rename(fpath,"video.mkv")
+        nani = await os.rename(file,"video.mkv")
 
         compressed = await compress_video(duration,msg,name)
 
