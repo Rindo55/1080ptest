@@ -113,7 +113,6 @@ ETA: {}
 ━━━━━━━━━━━━━━━━━━━━━
 `Encoding to 480p HEVC 10Bit
 {}: {}%
-{}
 Speed: {}
 ETA: {}`
     """
@@ -224,7 +223,6 @@ ETA: {}`
             guessname,
             status,
             percent,
-            bar,
             str(speed),
             ETA
         )
