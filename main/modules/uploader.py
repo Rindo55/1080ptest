@@ -26,6 +26,89 @@ from pyrogram.errors import FloodWait
 
 from main.inline import button1
 
+async def upload_videoer(msg: Message,file,id,tit,name,ttl):
+
+    try:
+
+    
+
+        fuk = isfile(file)
+
+        if fuk:
+
+            r = msg
+
+            c_time = time.time()
+
+            duration = get_duration(file)
+
+            size = get_filesize(file)
+
+            ep_num = get_epnum(name)
+
+            thumbnail = await generate_thumbnail(id,file,tit,ep_num,size,format_time(duration))
+
+            tags = tags_generator(tit)
+
+            buttons = InlineKeyboardMarkup([
+
+                [
+
+                    InlineKeyboardButton(text="Info", url="https://t.me/AnimeXT"),
+
+                    InlineKeyboardButton(text="Comments", url=f"https://t.me/ANIMECHATTERBOX")
+
+                ]
+
+            ])
+            filed = os.path.basename(file)
+            filed = filed.replace("(480p)", "[480p x265]")
+            caption = f"**{name}** **(Eng Sub)**"
+            caption = caption.replace("480p", "480p x265 10Bit")
+            x = await app.send_document(
+
+                UPLOADS_ID,
+
+            document=file,
+
+            caption=caption + "\n" + "(" + tit + ")" + "\n" + "#HEVC",
+
+            file_name=filed,
+
+            force_document=True,
+
+            progress=progress_for_pyrogram,
+ 
+            progress_args=(
+
+                os.path.basename(file),
+
+                r,
+
+                c_time,
+
+                ttl
+
+            )
+
+            )        
+
+    except FloodWait as e:
+
+        flood_time = int(e.x) + 5
+
+        try:
+
+            await status.edit(await status_text(f"Floodwait... Sleeping For {flood_time} Seconds"),reply_markup=button1)
+
+        except:
+
+            pass
+
+        await asyncio.sleep(flood_time)
+
+    return x.message_id
+
 async def upload_video(msg: Message,file,id,tit,name,ttl):
 
     try:
@@ -94,8 +177,6 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             )        
 
         try:
-
-            await r.delete()
 
             os.remove(file)
 
