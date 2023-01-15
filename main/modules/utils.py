@@ -111,7 +111,7 @@ ETA: {}
 
     text2 = """Name: {}
 {}: {}%
-⟨⟨{}⟩⟩
+{}
 Speed: {}
 ETA: {}
     """
@@ -163,8 +163,8 @@ ETA: {}
         else:
             size = str(size) + " MB"
 
-        fill = " ▰ "
-        blank = " ▱ "
+        fill = "🟩"
+        blank = "🟥"
         bar = ""
 
         bar += round(percent/10)*fill
