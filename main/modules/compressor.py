@@ -1,8 +1,6 @@
 import asyncio
 
-from main.modules.utils import get_progress_text
-
-from main.modules.tg_handler import videox_id 
+from main.modules.utils import get_progress_text 
 
 import os
 
