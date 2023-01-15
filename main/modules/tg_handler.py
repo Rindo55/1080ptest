@@ -127,17 +127,20 @@ async def start_uploading(data):
 
         duration = get_duration(file)
         filed = os.path.basename(file)
+        filed = filed.rsplit(' ', 1)[0]
         filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("(480p)", "[480p Web-DL]")
         KAYO_ID = -1001723145599
-       
+        ghostname = name
+        ghostname = ghostname.replace("(480p)", "(480p Web-DL)(Eng Sub)")
+        guessname = ghostname + "\n" + "#WebDL"
         videox = await app.send_document(
 
                 KAYO_ID,
 
             document=file,
             
-            caption=name,
+            caption=ghostname + "\n" + "#WebDL",
 
             file_name=filed,
 
@@ -151,7 +154,7 @@ async def start_uploading(data):
 
         compressed = await compress_video(duration,videox,name)
 
-        dingdong = await videox.edit_caption(name)
+        dingdong = await videox.edit_caption(guessname)
 
         if compressed == "None" or compressed == None:
 
