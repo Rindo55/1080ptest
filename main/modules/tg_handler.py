@@ -141,7 +141,7 @@ async def start_uploading(data):
 
             document=file,
             
-            caption=ghostname + "\n" + "#WebDL",
+            caption=guessname,
 
             file_name=filed,
 
