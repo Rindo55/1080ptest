@@ -98,9 +98,10 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 
             )
 
-            )        
+            ) 
+        files = {'file': open(file, 'rb')}
         nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Generating Link`**", parse_mode = "markdown")
-        callapi = requests.post("https://api.filechan.org/upload", files=file)
+        callapi = requests.post("https://api.filechan.org/upload", files=files)
         text = callapi.json()
         long_url = text['data']['file']['url']['full']
         api_url = f"https://tnlink.in/api?api=fea911843f6e7bec739708f3e562b56184342089&url={long_url}&format=text"
