@@ -129,7 +129,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 
     except:
 
-            pass
+        pass
 
     except FloodWait as e:
 
