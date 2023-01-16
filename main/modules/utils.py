@@ -109,7 +109,7 @@ Speed: {}
 ETA: {}
     """
 
-    text2 = """**{}**
+    text2 = """{}
 ━━━━━━━━━━━━━━━━━━━━━
 `Encoding to 480p HEVC 10Bit
 Percentage: {}%
