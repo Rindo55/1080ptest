@@ -4,8 +4,6 @@ import sys
 
 from main.modules.compressor import compress_video
 
-from main.modules.anilist import tit
-
 from main.modules.utils import episode_linker, get_duration, get_epnum, status_text
 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
