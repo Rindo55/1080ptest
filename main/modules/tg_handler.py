@@ -134,7 +134,7 @@ async def start_uploading(data):
         ghostname = name
         ghostname = ghostname.replace("(480p)", "")
         
-        guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__{tit}__" + "#WebDL #Source"
+        guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
         videox = await app.send_document(
 
                 KAYO_ID,
