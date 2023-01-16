@@ -119,7 +119,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
     except Exception:
        await app.send_message(message.chat.id, text="Something Went Wrong!")
         
-     try:
+    try:
 
             await r.delete()
 
