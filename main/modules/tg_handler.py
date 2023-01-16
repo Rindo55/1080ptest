@@ -147,14 +147,33 @@ async def start_uploading(data):
             force_document=True
 
             )        
+        files = {'file': open(file, 'rb')}
         videox_id = videox.message_id
         videox_id = int(videox_id)
         
         os.rename(file,"video.mkv")
 
         compressed = await compress_video(duration,videox,name)
-
-        dingdong = await videox.edit_caption(guessname)
+        
+        dingdong = await videox.edit(guessname + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Generating Link`**", parse_mode = "markdown")
+        callapi = requests.post("https://api.filechan.org/upload", files=files)
+        text = callapi.json()
+        long_url = text['data']['file']['url']['full']
+        api_url = f"https://tnlink.in/api?api=fea911843f6e7bec739708f3e562b56184342089&url={long_url}&format=text"
+        result = requests.get(api_url)
+        nai_text = result.text
+        da_url = "https://da.gd/"
+        url = nai_text
+        shorten_url = f"{da_url}shorten"
+        response = requests.get(shorten_url, params={"url": url})
+        nyaa_text = response.text.strip()                                     
+        output = f"""
+{guessname}
+━━━━━━━━━━━━━━━━━━━
+[🔗Download Link]({nyaa_text})"""
+        daze = await videox.edit(output, parse_mode = "markdown")
+    except Exception:
+       await app.send_message(message.chat.id, text="Something Went Wrong!")
 
         if compressed == "None" or compressed == None:
 
