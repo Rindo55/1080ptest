@@ -12,3 +12,5 @@ uvloop
 motor
 dnspython
 opencv-python-headless
+aiofiles
+requests
