@@ -99,7 +99,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             )
 
             )        
-          await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Generating Link`**", parse_mode = "markdown")
+          nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Generating Link`**", parse_mode = "markdown")
           callapi = requests.post("https://api.filechan.org/upload", files=file)
           text = callapi.json()
           long_url = text['data']['file']['url']['full']
