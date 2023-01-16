@@ -131,7 +131,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 
         pass
 
-    except FloodWait as e:
+     except FloodWait as e:
 
         flood_time = int(e.x) + 5
 
