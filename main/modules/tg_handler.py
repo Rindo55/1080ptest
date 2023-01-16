@@ -172,8 +172,6 @@ async def start_uploading(data):
 ━━━━━━━━━━━━━━━━━━━
 [🔗Download Link]({nyaa_text})"""
         daze = await videox.edit(output, parse_mode = "markdown")
-    except Exception:
-       await app.send_message(message.chat.id, text="Something Went Wrong!")
 
         if compressed == "None" or compressed == None:
 
