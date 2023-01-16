@@ -4,6 +4,8 @@ import sys
 
 from main.modules.compressor import compress_video
 
+from main.modules.anilist import tit
+
 from main.modules.utils import episode_linker, get_duration, get_epnum, status_text
 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -132,8 +134,9 @@ async def start_uploading(data):
         filed = filed.replace("(480p)", "[480p Web-DL].mkv")
         KAYO_ID = -1001723145599
         ghostname = name
-        ghostname = ghostname.replace("(480p)", "(480p Web-DL)(Eng Sub)")
-        guessname = ghostname + "\n" + "#WebDL"
+        ghostname = ghostname.replace("(480p)", "")
+        
+        guessname = f"**{ghostname}**}" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__{tit}__" + "#WebDL #Source"
         videox = await app.send_document(
 
                 KAYO_ID,
@@ -175,23 +178,6 @@ async def start_uploading(data):
         message_id = int(msg.message_id) + 1
 
         video = await upload_video(msg,fpath,id,tit,name,size)   
-        dingdongx = await videox.edit(guessname + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Generating Link`**", parse_mode = "markdown")
-        callapi = requests.post("https://api.filechan.org/upload", files=files)
-        text = callapi.json()
-        long_url = text['data']['file']['url']['full']
-        api_url = f"https://tnlink.in/api?api=fea911843f6e7bec739708f3e562b56184342089&url={long_url}&format=text"
-        result = requests.get(api_url)
-        nai_text = result.text
-        da_url = "https://da.gd/"
-        url = nai_text
-        shorten_url = f"{da_url}shorten"
-        response = requests.get(shorten_url, params={"url": url})
-        nyaa_text = response.text.strip()                                     
-        output = f"""
-{guessname}
-━━━━━━━━━━━━━━━━━━━
-[🔗Download Link]({nyaa_text})"""
-        daze = await videox.edit(output, parse_mode = "markdown")
 
         try:
 
