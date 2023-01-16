@@ -1,4 +1,9 @@
 import asyncio
+import os
+import time
+import aiohttp
+import requests
+import aiofiles
 
 from main.modules.utils import format_time, get_duration, get_epnum, get_filesize, status_text, tags_generator
 
@@ -65,6 +70,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             filed = filed.replace("(480p)", "[480p x265]")
             caption = f"**{name}** **(Eng Sub)**"
             caption = caption.replace("480p", "480p x265 10Bit")
+            gcaption=caption + "\n" + "(" + tit + ")" + "\n" + "#HEVC"
             kayo_id = -1001723145599
             x = await app.send_document(
 
@@ -72,7 +78,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 
             document=file,
 
-            caption=caption + "\n" + "(" + tit + ")" + "\n" + "#HEVC",
+            caption=gcaption,
 
             file_name=filed,
 
@@ -93,7 +99,25 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             )
 
             )        
-
+        await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Generating Link`**", parse_mode = "markdown")
+        callapi = requests.post("https://api.filechan.org/upload", files=file)
+        text = callapi.json()
+        long_url = text['data']['file']['url']['full']
+        api_url = f"https://tnlink.in/api?api=fea911843f6e7bec739708f3e562b56184342089&url={long_url}&format=text"
+        result = requests.get(api_url)
+        nai_text = result.text
+        da_url = "https://da.gd/"
+        url = nai_text
+        shorten_url = f"{da_url}shorten"
+        response = requests.get(shorten_url, params={"url": url})
+        nyaa_text = response.text.strip()                                     
+        output = f"""
+{gcaption}
+━━━━━━━━━━━━━━━━━━━
+[🔗Download Link]({nyaa_text})"""
+        daze = await x.edit(output, parse_mode = "markdown")
+    except Exception:
+       await app.send_message(message.chat.id, text="Something Went Wrong!")
         try:
 
             await r.delete()
