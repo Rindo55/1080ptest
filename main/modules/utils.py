@@ -100,7 +100,7 @@ async def status_text(text):
     )
 
 
-def get_progress_text(name,status,completed,speed,total,enco=False):
+def get_progress_text(guessname,status,completed,speed,total,enco=False):
     text = """Name: {}
 {}: {}%
 [{}]
@@ -174,7 +174,7 @@ ETA: {}`
 
         speed += "/sec"
         text = text.format(
-            name,
+            guessname,
             status,
             percent,
             bar,
