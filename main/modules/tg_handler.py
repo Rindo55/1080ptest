@@ -148,13 +148,12 @@ async def start_uploading(data):
             force_document=True
 
             )        
-        files = {'file': open(file, 'rb')}
         videox_id = videox.message_id
         videox_id = int(videox_id)
         
         os.rename(file,"video.mkv")
 
-        compressed = await compress_video(duration,videox,name)
+        compressed = await compress_video(duration,videox,name,guessname)
         
         dingdong = await videox.edit(guessname)
 
