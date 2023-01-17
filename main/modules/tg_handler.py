@@ -153,7 +153,7 @@ async def start_uploading(data):
         
         os.rename(file,"video.mkv")
 
-        compressed = await compress_video(duration,videox,name,tit)
+        compressed = await compress_video(duration,videox,guessname)
         
         dingdong = await videox.edit(guessname)
 
