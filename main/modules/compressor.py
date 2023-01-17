@@ -87,9 +87,9 @@ async def compress_video(total_time, videox, name):
 
         progress_str = get_progress_text(name,"Encoding",time_done,str(speed),total_time,enco=True)
         ghostnamex = name
-        ghostnamex = ghostname.replace("(480p)", "")
+        ghostnamex = ghostnamex.replace("(480p)", "")
         
-        guessnamex = ghostname + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
+        guessnamex = ghostnamex + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
 
         try:
 
