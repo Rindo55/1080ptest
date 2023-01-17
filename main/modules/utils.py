@@ -217,7 +217,7 @@ ETA: {}`
         
         speed = str(speed) + "x"
 
-        name = name.replace("(480p)", "")
+        name = name.replace("(480p)", "") + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + tit + "\n" + "#Source #WebDL"
       
         text2 = text2.format(
             name,
