@@ -2,7 +2,7 @@ import asyncio
 
 from main.modules.utils import get_progress_text 
 
-from main.modules.uploader import rest
+from main.modules.uploader import upload_video
 
 import os
 
