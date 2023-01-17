@@ -2,8 +2,6 @@ import asyncio
 
 from main.modules.utils import get_progress_text 
 
-from main.modules.uploader import upload_video
-
 import os
 
 import re
@@ -17,7 +15,7 @@ async def gg():
     cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animxt':fontsize=18:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" -c:v h264 -preset medium -pix_fmt yuv420p10le -r 24000/1001 -crf 25 -x264-params deblock=-1,-1:no-sao:aq-mode=2:aq-strength=0.90:frame-threads=4:no-info=1 -c:a libopus -b:a 80k "out.mkv" -y''',
     subprocess.Popen(cmd,shell=True)
 
-async def compress_video(total_time, videox, name):
+async def compress_video(total_time, videox, name, tit):
 
   try:
 
@@ -91,7 +89,7 @@ async def compress_video(total_time, videox, name):
 
         try:
 
-          await videox.edit_caption(rest + progress_str)
+          await videox.edit_caption(tit + progress_str)
 
         except:
 
