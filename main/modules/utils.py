@@ -220,7 +220,7 @@ ETA: {}`
         ghostnamex = ghostnamex.replace("(480p)", "")
         guessnamex = f"**{ghostnamex}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
         text2 = text2.format(
-            guessnamex,
+            guessname,
             percent,
             str(speed),
             ETA
