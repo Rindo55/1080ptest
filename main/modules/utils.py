@@ -100,7 +100,7 @@ async def status_text(text):
     )
 
 
-def get_progress_text(name,status,completed,speed,total,enco=False):
+def get_progress_text(guessname,status,completed,speed,total,enco=False):
     text = """Name: {}
 {}: {}%
 [{}]
@@ -109,7 +109,7 @@ Speed: {}
 ETA: {}
     """
 
-    text2 = """
+    text2 = """{}
 ━━━━━━━━━━━━━━━━━━━━━
 `Encoding to 480p HEVC 10Bit
 Percentage: {}%
@@ -218,6 +218,7 @@ ETA: {}`
         speed = str(speed) + "x"
   
         text2 = text2.format(
+            guessname,
             percent,
             str(speed),
             ETA
