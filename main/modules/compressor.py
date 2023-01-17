@@ -2,6 +2,8 @@ import asyncio
 
 from main.modules.utils import get_progress_text 
 
+from main.modules.uploader import rest
+
 import os
 
 import re
@@ -89,7 +91,7 @@ async def compress_video(total_time, videox, name):
 
         try:
 
-          await videox.edit_caption(progress_str)
+          await videox.edit_caption(rest + progress_str)
 
         except:
 
