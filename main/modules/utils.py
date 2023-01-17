@@ -216,11 +216,11 @@ ETA: {}`
         bar += round(((20 - len(bar))/2))*blank
         
         speed = str(speed) + "x"
-        ghostnamex = name
-        ghostnamex = ghostnamex.replace("(480p)", "")
-        guessnamex = ghostnamex + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n" + "#Source #WebDL"
+
+        name = name.replace("(480p)", "")
+      
         text2 = text2.format(
-            guessnamex,
+            name,
             percent,
             str(speed),
             ETA
