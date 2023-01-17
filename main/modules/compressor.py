@@ -85,7 +85,7 @@ async def compress_video(total_time, videox, name):
 
         
 
-        progress_str = get_progress_text(name,"Encoding",time_done,str(speed),total_time,enco=True)
+        progress_str = get_progress_text(guessname,"Encoding",time_done,str(speed),total_time,enco=True)
 
         try:
 
