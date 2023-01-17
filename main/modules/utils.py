@@ -109,7 +109,7 @@ Speed: {}
 ETA: {}
     """
 
-    text2 = """{}
+    text2 = """
 ━━━━━━━━━━━━━━━━━━━━━
 `Encoding to 480p HEVC 10Bit
 Percentage: {}%
@@ -216,9 +216,8 @@ ETA: {}`
         bar += round(((20 - len(bar))/2))*blank
         
         speed = str(speed) + "x"
-        name = name.replace("(480p)", "") + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n"+ "#Source #WebDL"
+  
         text2 = text2.format(
-            name,
             percent,
             str(speed),
             ETA
