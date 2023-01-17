@@ -85,11 +85,15 @@ async def compress_video(total_time, videox, name):
 
         
 
-        progress_str = get_progress_text(name,tit,"Encoding",time_done,str(speed),total_time,enco=True)
+        progress_str = get_progress_text(name,"Encoding",time_done,str(speed),total_time,enco=True)
+        ghostnamex = name
+        ghostnamex = ghostname.replace("(480p)", "")
+        
+        guessnamex = ghostname + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
 
         try:
 
-          await videox.edit_caption(progress_str)
+          await videox.edit_caption(guessnamex + "\n" + progress_str)
 
         except:
 
