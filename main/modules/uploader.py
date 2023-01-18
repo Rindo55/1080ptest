@@ -102,7 +102,6 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 
             ) 
         
-    try:
 
             await r.delete()
 
