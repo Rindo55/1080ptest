@@ -152,15 +152,15 @@ async def start_uploading(data):
         videox_id = int(videox_id)
         
         os.rename(file,"video.mkv")
-    try:
+        try:
 
-        anilist = await get_channel(id)
+            anilist = await get_channel(id)
 
-        if anilist == 0:
+            if anilist == 0:
 
-            img, caption = await get_anilist_data(name)
+               img, caption = await get_anilist_data(name)
 
-            main = await app.send_photo(INDEX_ID,photo=img,caption=caption)
+               main = await app.send_photo(INDEX_ID,photo=img,caption=caption)
         compressed = await compress_video(duration,videox,name,guessname)
         
         dingdong = await videox.edit(guessname)
