@@ -130,24 +130,11 @@ async def start_uploading(data):
         filed = filed.rsplit(' ', 1)[0]
         filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("(480p)", "[480p Web-DL].mkv")
-        KAYO_ID = -1001723145599
+        KAYO_ID = -1001821602858
         ghostname = name
-        ghostname = ghostname.replace("(480p)", "")
+        ghostname = ghostname.replace("(720p)", "")
         
-        guessname = f"**{ghostname}**" + "\n" + "✓  `480p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
-
-        anilist = await get_channel(id)
-
-        if anilist == 0:
-
-         img, caption = await get_anilist_data(name)
-
-         main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
-
-
-
-
-
+        guessname = f"**{ghostname}**" + "\n" + "✓  `720p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
         videox = await app.send_document(
 
                 KAYO_ID,
@@ -165,14 +152,6 @@ async def start_uploading(data):
         videox_id = int(videox_id)
         
         os.rename(file,"video.mkv")
-
-
-
-
-
-
-         
-
 
         compressed = await compress_video(duration,videox,name,guessname)
         
