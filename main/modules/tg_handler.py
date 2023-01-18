@@ -142,7 +142,7 @@ async def start_uploading(data):
 
          img, caption = await get_anilist_data(name)
 
-         main = await app.send_photo(INDEX_ID,photo=img,caption=caption)
+         main = await app.send_photo(KAYO_ID,photo=img,caption=caption)
 
 
 
