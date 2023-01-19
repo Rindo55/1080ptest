@@ -74,7 +74,6 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             caption = caption.replace("(1080p)", "")
             gcaption=f"**{caption}**" + "\n" + "✓  `1080p x264`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n" + "#Encoded #x264"
             kayo_id = -1001591697490
-    try:
             x = await app.send_document(
 
                 kayo_id,
@@ -122,6 +121,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
         daze = await x.edit(output, parse_mode = "markdown")
     except Exception:
        await app.send_message(message.chat.id, text="Something Went Wrong!")
+    try:
 
             await r.delete()
 
