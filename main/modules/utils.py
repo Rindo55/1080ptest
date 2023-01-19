@@ -111,7 +111,7 @@ ETA: {}
 
     text2 = """{}
 ━━━━━━━━━━━━━━━━━━━━━
-`Encoding 720p
+`Encoding 1080p
 Percentage: {}%
 Speed: {}
 ETA: {}`
