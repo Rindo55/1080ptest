@@ -11,7 +11,7 @@ import math
 import subprocess
 
 async def gg():
-    cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -c:v h264 -s 192x144 -preset veryfast -r 24000/1001 -crf 32 -c:a copy "out.mkv" -y''',
+        cmd = '''ffmpeg -hide_banner -loglevel quiet -progress "progressaa.txt" -i "video.mkv" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animxt':fontsize=18:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" -c:v h264 -preset veryfast -r 24000/1001 -crf 25 -x264-params deblock=-1,-1:no-sao:aq-mode=2:aq-strength=0.90:frame-threads=4:no-info=1 -c:a aac -b:a 128k "out.mkv" -y''',
     subprocess.Popen(cmd,shell=True)
 
 async def compress_video(total_time, videox, name, guessname):
