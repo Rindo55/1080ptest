@@ -10,15 +10,14 @@ API_HASH = "96b46175824223a33737657ab943fd6a"
 
 BOT_TOKEN = "5777675996:AAHduaZfuZPb9s25c_Wu0uNQooWYnYfzTPY"
 
-MONGO_DB_URI = "mongodb+srv://720p:x264@cluster0.twmaao2.mongodb.net/?retryWrites=true&w=majority"
+MONGO_DB_URI = "mongodb+srv://1080p:test@cluster0.pohpxat.mongodb.net/?retryWrites=true&w=majority"
+INDEX_ID = -1001884130912
 
-INDEX_ID = -1001653508799
+UPLOADS_ID = -1001884130912
 
-UPLOADS_ID = -1001653508799
+PROGRESS_ID = -1001884130912
 
-PROGRESS_ID = -1001653508799
-
-LINK_ID = -1001653508799
+LINK_ID = -1001884130912
 
 STATUS_ID = 2
 
