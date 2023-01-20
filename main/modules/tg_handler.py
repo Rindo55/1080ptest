@@ -130,7 +130,7 @@ async def start_uploading(data):
         filed = filed.rsplit(' ', 1)[0]
         filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("(1080p)", "[1080p Web-DL].mkv")
-        KAYO_ID = -1001159872623
+        KAYO_ID = -1001591697490
         ghostname = name
         ghostname = ghostname.replace("(1080p)", "")
         
