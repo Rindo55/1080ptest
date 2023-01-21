@@ -130,14 +130,15 @@ async def start_uploading(data):
         filed = filed.rsplit(' ', 1)[0]
         filed = filed.replace("[SubsPlease]", "")
         filed = filed.replace("(1080p)", "[1080p Web-DL].mkv")
-        KAYO_ID = -1001159872623
+        KAYO_ID = -1001591697490
         ghostname = name
         ghostname = ghostname.replace("(1080p)", "")
         
         guessname = f"**{ghostname}**" + "\n" + "✓  `1080p x264 Web-DL`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n"+ "#Source #WebDL"
         
         
-        videox = await app.on_message(filters.chat_id(KAYO_ID) & filters.regex('720p')) send_document(
+        await app.on_message(filters.chat_id(KAYO_ID) & filters.regex('720p')) 
+        videox = await app.send_document(
 
                 KAYO_ID,
 
