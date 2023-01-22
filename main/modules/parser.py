@@ -11,6 +11,8 @@ def trim_title(title: str):
     title, ext = title.replace("[SubsPlease]","").strip().split("[",maxsplit=2)
     _, ext = ext.split("]",maxsplit=2)
     title = title.strip() + ext
+    title = title.replace("Ijiranaide, Nagatoro-san S2", "Ijiranaide, Nagatoro-san 2")
+    title = title.replace("Shinka", "Shin Shinka")
     return title
 
 def parse():
