@@ -43,7 +43,8 @@ async def tg_handler():
                 queue.remove(i)
 
                 val, id, name, ep_num, video = await start_uploading(i)
-
+                title = title.replace("Shinka", "Shin Shinka")
+                title = title.replace("Ijiranaide, Nagatoro-san S2", "Ijiranaide, Nagatoro-san 2")
                 await del_anime(i["title"])
 
                 await save_uploads(i["title"])
