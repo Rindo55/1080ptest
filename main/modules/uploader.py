@@ -69,7 +69,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
 
             ])
             filed = os.path.basename(file)
-            filed = filed.replace("(1080p)", "[720p x265]")
+            filed = filed.replace("(1080p)", "[1080p Web-DL]")
             caption = f"{name}"
             caption = caption.replace("(1080p)", "")
             gcaption=f"**{caption}**" + "\n" + "✓  `720p x265 10Bit`" + "\n" + "✓  `English Sub`" + "\n" + f"__({tit})__" + "\n" + "#Encoded #HEVC"
