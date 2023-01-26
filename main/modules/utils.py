@@ -111,7 +111,7 @@ ETA: {}
 
     text2 = """{}
 ━━━━━━━━━━━━━━━━━━━━━
-`Encoding 1080p
+`Encoding to 720p HEVC 10Bit
 Percentage: {}%
 Speed: {}
 ETA: {}`
