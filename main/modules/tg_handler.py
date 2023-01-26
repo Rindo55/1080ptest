@@ -108,7 +108,7 @@ async def start_uploading(data):
         name += f" @animxt." + ext
 
         fpath = "downloads/" + name
-        KAYO_ID = -1001591697490
+        KAYO_ID = -1001159872623
         name = name.replace(f" @animxt.","").replace(ext,"").strip()
         id, img, tit = await get_anime_img(get_anime_name(title))
         msg = await app.send_photo(UPLOADS_ID,photo=img,caption=title)
