@@ -101,7 +101,7 @@ async def upload_video(msg: Message,file,id,tit,name,ttl):
             )
 
             ) 
-        nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Error: 503 Service Unavailable. No server is available to handle this request.`", parse_mode = "markdown")
+            nanix = await x.edit(gcaption + "\n" "━━━━━━━━━━━━━━━━━━━" + "\n" + "`Error: 503 Service Unavailable. No server is available to handle this request.`", parse_mode = "markdown")
 
             await r.delete()
 
